@@ -28,5 +28,30 @@ float voltage() {
 	return float(value) * __BUS_MILLIVOLTS_LSB / 1000.0;
 }
 
-// shunt_voltage function
-float shunt_volat
+// shunt voltage function
+float shunt_voltage(){
+	uint16_t shunt_voltage = read_register(__REG_SHUNTVOLTAGE);
+	return __SHUNT_MILLIVOLTS_LSB * (int16_t) shunt_voltage;
+}
+
+// supply voltage function
+float supply_voltage(){
+	return voltage() + (shunt_voltage() / 1000.0
+}
+
+// Get the current function
+float current() {
+	uint16_t current_raw = read_register(__REG_CURRENT);
+	int16_t current = (int16_t)current_raw;
+	if (current > 32767) current -= 65536;
+	return  current * _current_lsb * 1000.0;
+}
+
+// Power function
+float power() {
+	uint16_t power_raw = read_register(__REG_POWER);
+	int16_t power = (int16_t)power_raw;
+	return power * _power_lsb * 1000.0;
+}
+
+
