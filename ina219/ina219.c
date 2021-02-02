@@ -23,9 +23,10 @@ void reset(){
 }
 
 // Get volatage from I2C bus
-flaot voltage() {
+float voltage() {
 	uint16_t value = read_register(__REG_BUSVOLTAGE) >> 3;
 	return float(value) * __BUS_MILLIVOLTS_LSB / 1000.0;
 }
 
-
+// shunt_voltage function
+float shunt_volat
