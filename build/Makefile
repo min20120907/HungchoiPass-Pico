@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/min20120907/Documents/pico-hcp
+CMAKE_SOURCE_DIR = /home/min20120907/Documents/HungchoiPass-Pico
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/min20120907/Documents/pico-hcp/build
+CMAKE_BINARY_DIR = /home/min20120907/Documents/HungchoiPass-Pico/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/min20120907/Documents/pico-hcp/build/CMakeFiles /home/min20120907/Documents/pico-hcp/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/min20120907/Documents/HungchoiPass-Pico/build/CMakeFiles /home/min20120907/Documents/HungchoiPass-Pico/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/min20120907/Documents/pico-hcp/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/min20120907/Documents/HungchoiPass-Pico/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -913,6 +913,33 @@ _deps/pico_sdk-src/src/rp2_common/hardware_gpio/gpio.c.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/_deps/pico_sdk-src/src/rp2_common/hardware_gpio/gpio.c.s
 .PHONY : _deps/pico_sdk-src/src/rp2_common/hardware_gpio/gpio.c.s
 
+_deps/pico_sdk-src/src/rp2_common/hardware_i2c/i2c.obj: _deps/pico_sdk-src/src/rp2_common/hardware_i2c/i2c.c.obj
+
+.PHONY : _deps/pico_sdk-src/src/rp2_common/hardware_i2c/i2c.obj
+
+# target to build an object file
+_deps/pico_sdk-src/src/rp2_common/hardware_i2c/i2c.c.obj:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/_deps/pico_sdk-src/src/rp2_common/hardware_i2c/i2c.c.obj
+.PHONY : _deps/pico_sdk-src/src/rp2_common/hardware_i2c/i2c.c.obj
+
+_deps/pico_sdk-src/src/rp2_common/hardware_i2c/i2c.i: _deps/pico_sdk-src/src/rp2_common/hardware_i2c/i2c.c.i
+
+.PHONY : _deps/pico_sdk-src/src/rp2_common/hardware_i2c/i2c.i
+
+# target to preprocess a source file
+_deps/pico_sdk-src/src/rp2_common/hardware_i2c/i2c.c.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/_deps/pico_sdk-src/src/rp2_common/hardware_i2c/i2c.c.i
+.PHONY : _deps/pico_sdk-src/src/rp2_common/hardware_i2c/i2c.c.i
+
+_deps/pico_sdk-src/src/rp2_common/hardware_i2c/i2c.s: _deps/pico_sdk-src/src/rp2_common/hardware_i2c/i2c.c.s
+
+.PHONY : _deps/pico_sdk-src/src/rp2_common/hardware_i2c/i2c.s
+
+# target to generate assembly for a file
+_deps/pico_sdk-src/src/rp2_common/hardware_i2c/i2c.c.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/_deps/pico_sdk-src/src/rp2_common/hardware_i2c/i2c.c.s
+.PHONY : _deps/pico_sdk-src/src/rp2_common/hardware_i2c/i2c.c.s
+
 _deps/pico_sdk-src/src/rp2_common/hardware_irq/irq.obj: _deps/pico_sdk-src/src/rp2_common/hardware_irq/irq.c.obj
 
 .PHONY : _deps/pico_sdk-src/src/rp2_common/hardware_irq/irq.obj
@@ -1651,6 +1678,33 @@ _deps/pico_sdk-src/src/rp2_common/pico_stdlib/stdlib.c.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/_deps/pico_sdk-src/src/rp2_common/pico_stdlib/stdlib.c.s
 .PHONY : _deps/pico_sdk-src/src/rp2_common/pico_stdlib/stdlib.c.s
 
+ina219/ina219.obj: ina219/ina219.c.obj
+
+.PHONY : ina219/ina219.obj
+
+# target to build an object file
+ina219/ina219.c.obj:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/ina219/ina219.c.obj
+.PHONY : ina219/ina219.c.obj
+
+ina219/ina219.i: ina219/ina219.c.i
+
+.PHONY : ina219/ina219.i
+
+# target to preprocess a source file
+ina219/ina219.c.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/ina219/ina219.c.i
+.PHONY : ina219/ina219.c.i
+
+ina219/ina219.s: ina219/ina219.c.s
+
+.PHONY : ina219/ina219.s
+
+# target to generate assembly for a file
+ina219/ina219.c.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/ina219/ina219.c.s
+.PHONY : ina219/ina219.c.s
+
 main.obj: main.c.obj
 
 .PHONY : main.obj
@@ -1773,6 +1827,9 @@ help:
 	@echo "... _deps/pico_sdk-src/src/rp2_common/hardware_gpio/gpio.obj"
 	@echo "... _deps/pico_sdk-src/src/rp2_common/hardware_gpio/gpio.i"
 	@echo "... _deps/pico_sdk-src/src/rp2_common/hardware_gpio/gpio.s"
+	@echo "... _deps/pico_sdk-src/src/rp2_common/hardware_i2c/i2c.obj"
+	@echo "... _deps/pico_sdk-src/src/rp2_common/hardware_i2c/i2c.i"
+	@echo "... _deps/pico_sdk-src/src/rp2_common/hardware_i2c/i2c.s"
 	@echo "... _deps/pico_sdk-src/src/rp2_common/hardware_irq/irq.obj"
 	@echo "... _deps/pico_sdk-src/src/rp2_common/hardware_irq/irq.i"
 	@echo "... _deps/pico_sdk-src/src/rp2_common/hardware_irq/irq.s"
@@ -1855,6 +1912,9 @@ help:
 	@echo "... _deps/pico_sdk-src/src/rp2_common/pico_stdlib/stdlib.obj"
 	@echo "... _deps/pico_sdk-src/src/rp2_common/pico_stdlib/stdlib.i"
 	@echo "... _deps/pico_sdk-src/src/rp2_common/pico_stdlib/stdlib.s"
+	@echo "... ina219/ina219.obj"
+	@echo "... ina219/ina219.i"
+	@echo "... ina219/ina219.s"
 	@echo "... main.obj"
 	@echo "... main.i"
 	@echo "... main.s"

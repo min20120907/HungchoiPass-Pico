@@ -1,4 +1,4 @@
-# Install script for directory: /home/min20120907/Documents/pico-hcp/build/_deps/pico_sdk-src/src/common/pico_divider
+# Install script for directory: /home/min20120907/Documents/HungchoiPass-Pico/build/_deps/pico_sdk-src/src/common/pico_divider
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

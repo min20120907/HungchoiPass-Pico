@@ -3,7 +3,7 @@ set(CMAKE_HOST_SYSTEM_NAME "Linux")
 set(CMAKE_HOST_SYSTEM_VERSION "5.4.0-65-generic")
 set(CMAKE_HOST_SYSTEM_PROCESSOR "x86_64")
 
-include("/home/min20120907/Documents/pico-hcp/build/_deps/pico_sdk-src/cmake/preload/toolchains/pico_arm_gcc.cmake")
+include("/home/min20120907/Documents/HungchoiPass-Pico/build/_deps/pico_sdk-src/cmake/preload/toolchains/pico_arm_gcc.cmake")
 
 set(CMAKE_SYSTEM "PICO")
 set(CMAKE_SYSTEM_NAME "PICO")

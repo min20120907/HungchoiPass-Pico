@@ -4,7 +4,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
-#include <bitset>
 #include <unistd.h>
 #include <fcntl.h>
 
@@ -20,7 +19,7 @@ void write_register(uint8_t register_address, uint16_t register_value)
 	buf[1] = register_value >> 8;
 	buf[2] = register_value & 0xFF;
 	
-	if (i2c_write_blocking(I2c_PORT, _file_descriptor, buf, 3) != 3)
+	if (i2c_write_blocking(I2C_PORT, _file_descriptor, buf, 3) != 3)
 	{
 		perror("Failed to write to the i2c bus");
 	}
@@ -45,7 +44,7 @@ float shunt_voltage(){
 
 // supply voltage function
 float supply_voltage(){
-	return voltage() + (shunt_voltage() / 1000.0
+	return voltage() + (shunt_voltage() / 1000.0);
 }
 
 // Get the current function

@@ -1,4 +1,4 @@
-# Install script for directory: /home/min20120907/Documents/pico-hcp/build/_deps/pico_sdk-src/src/rp2_common/hardware_interp
+# Install script for directory: /home/min20120907/Documents/HungchoiPass-Pico/build/_deps/pico_sdk-src/src/rp2_common/hardware_interp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

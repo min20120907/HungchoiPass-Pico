@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/min20120907/Documents/pico-hcp
+CMAKE_SOURCE_DIR = /home/min20120907/Documents/HungchoiPass-Pico
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/min20120907/Documents/pico-hcp/build
+CMAKE_BINARY_DIR = /home/min20120907/Documents/HungchoiPass-Pico/build
 
 # Utility rule file for bs2_default_bin.
 
@@ -57,8 +57,8 @@ pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_bin: pico-sdk/src/rp2
 
 
 pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin: pico-sdk/src/rp2_common/boot_stage2/bs2_default.elf
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/min20120907/Documents/pico-hcp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating bs2_default.bin"
-	cd /home/min20120907/Documents/pico-hcp/build/pico-sdk/src/rp2_common/boot_stage2 && /usr/bin/arm-none-eabi-objcopy -Obinary /home/min20120907/Documents/pico-hcp/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.elf /home/min20120907/Documents/pico-hcp/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/min20120907/Documents/HungchoiPass-Pico/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating bs2_default.bin"
+	cd /home/min20120907/Documents/HungchoiPass-Pico/build/pico-sdk/src/rp2_common/boot_stage2 && /usr/bin/arm-none-eabi-objcopy -Obinary /home/min20120907/Documents/HungchoiPass-Pico/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.elf /home/min20120907/Documents/HungchoiPass-Pico/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin
 
 bs2_default_bin: pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_bin
 bs2_default_bin: pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin
@@ -72,10 +72,10 @@ pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_bin.dir/build: bs2_de
 .PHONY : pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_bin.dir/build
 
 pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_bin.dir/clean:
-	cd /home/min20120907/Documents/pico-hcp/build/pico-sdk/src/rp2_common/boot_stage2 && $(CMAKE_COMMAND) -P CMakeFiles/bs2_default_bin.dir/cmake_clean.cmake
+	cd /home/min20120907/Documents/HungchoiPass-Pico/build/pico-sdk/src/rp2_common/boot_stage2 && $(CMAKE_COMMAND) -P CMakeFiles/bs2_default_bin.dir/cmake_clean.cmake
 .PHONY : pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_bin.dir/clean
 
 pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_bin.dir/depend:
-	cd /home/min20120907/Documents/pico-hcp/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/min20120907/Documents/pico-hcp /home/min20120907/Documents/pico-hcp/build/_deps/pico_sdk-src/src/rp2_common/boot_stage2 /home/min20120907/Documents/pico-hcp/build /home/min20120907/Documents/pico-hcp/build/pico-sdk/src/rp2_common/boot_stage2 /home/min20120907/Documents/pico-hcp/build/pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_bin.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/min20120907/Documents/HungchoiPass-Pico/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/min20120907/Documents/HungchoiPass-Pico /home/min20120907/Documents/HungchoiPass-Pico/build/_deps/pico_sdk-src/src/rp2_common/boot_stage2 /home/min20120907/Documents/HungchoiPass-Pico/build /home/min20120907/Documents/HungchoiPass-Pico/build/pico-sdk/src/rp2_common/boot_stage2 /home/min20120907/Documents/HungchoiPass-Pico/build/pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_bin.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_bin.dir/depend
 

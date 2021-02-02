@@ -1,4 +1,4 @@
-# Install script for directory: /home/min20120907/Documents/pico-hcp/build/_deps/pico_sdk-src/src
+# Install script for directory: /home/min20120907/Documents/HungchoiPass-Pico/build/_deps/pico_sdk-src/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,9 +34,9 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/min20120907/Documents/pico-hcp/build/pico-sdk/src/common/cmake_install.cmake")
-  include("/home/min20120907/Documents/pico-hcp/build/pico-sdk/src/rp2_common/cmake_install.cmake")
-  include("/home/min20120907/Documents/pico-hcp/build/pico-sdk/src/rp2040/cmake_install.cmake")
+  include("/home/min20120907/Documents/HungchoiPass-Pico/build/pico-sdk/src/common/cmake_install.cmake")
+  include("/home/min20120907/Documents/HungchoiPass-Pico/build/pico-sdk/src/rp2_common/cmake_install.cmake")
+  include("/home/min20120907/Documents/HungchoiPass-Pico/build/pico-sdk/src/rp2040/cmake_install.cmake")
 
 endif()
 

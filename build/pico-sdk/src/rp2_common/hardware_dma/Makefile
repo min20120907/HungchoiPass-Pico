@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/min20120907/Documents/pico-hcp
+CMAKE_SOURCE_DIR = /home/min20120907/Documents/HungchoiPass-Pico
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/min20120907/Documents/pico-hcp/build
+CMAKE_BINARY_DIR = /home/min20120907/Documents/HungchoiPass-Pico/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/min20120907/Documents/pico-hcp/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/min20120907/Documents/pico-hcp/build/CMakeFiles /home/min20120907/Documents/pico-hcp/build/pico-sdk/src/rp2_common/hardware_dma/CMakeFiles/progress.marks
-	cd /home/min20120907/Documents/pico-hcp/build && $(MAKE) -f CMakeFiles/Makefile2 pico-sdk/src/rp2_common/hardware_dma/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/min20120907/Documents/pico-hcp/build/CMakeFiles 0
+	cd /home/min20120907/Documents/HungchoiPass-Pico/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/min20120907/Documents/HungchoiPass-Pico/build/CMakeFiles /home/min20120907/Documents/HungchoiPass-Pico/build/pico-sdk/src/rp2_common/hardware_dma/CMakeFiles/progress.marks
+	cd /home/min20120907/Documents/HungchoiPass-Pico/build && $(MAKE) -f CMakeFiles/Makefile2 pico-sdk/src/rp2_common/hardware_dma/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/min20120907/Documents/HungchoiPass-Pico/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/min20120907/Documents/pico-hcp/build && $(MAKE) -f CMakeFiles/Makefile2 pico-sdk/src/rp2_common/hardware_dma/clean
+	cd /home/min20120907/Documents/HungchoiPass-Pico/build && $(MAKE) -f CMakeFiles/Makefile2 pico-sdk/src/rp2_common/hardware_dma/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,17 +97,17 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/min20120907/Documents/pico-hcp/build && $(MAKE) -f CMakeFiles/Makefile2 pico-sdk/src/rp2_common/hardware_dma/preinstall
+	cd /home/min20120907/Documents/HungchoiPass-Pico/build && $(MAKE) -f CMakeFiles/Makefile2 pico-sdk/src/rp2_common/hardware_dma/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/min20120907/Documents/pico-hcp/build && $(MAKE) -f CMakeFiles/Makefile2 pico-sdk/src/rp2_common/hardware_dma/preinstall
+	cd /home/min20120907/Documents/HungchoiPass-Pico/build && $(MAKE) -f CMakeFiles/Makefile2 pico-sdk/src/rp2_common/hardware_dma/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/min20120907/Documents/pico-hcp/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/min20120907/Documents/HungchoiPass-Pico/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Help Target
@@ -129,6 +129,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/min20120907/Documents/pico-hcp/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/min20120907/Documents/HungchoiPass-Pico/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

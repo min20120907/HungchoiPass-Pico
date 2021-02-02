@@ -2,34 +2,34 @@
 	"sources" : 
 	[
 		{
-			"file" : "/home/min20120907/Documents/pico-hcp/build/CMakeFiles/ELF2UF2Build"
+			"file" : "/home/min20120907/Documents/HungchoiPass-Pico/build/CMakeFiles/ELF2UF2Build"
 		},
 		{
-			"file" : "/home/min20120907/Documents/pico-hcp/build/CMakeFiles/ELF2UF2Build.rule"
+			"file" : "/home/min20120907/Documents/HungchoiPass-Pico/build/CMakeFiles/ELF2UF2Build.rule"
 		},
 		{
-			"file" : "/home/min20120907/Documents/pico-hcp/build/CMakeFiles/ELF2UF2Build-complete.rule"
+			"file" : "/home/min20120907/Documents/HungchoiPass-Pico/build/CMakeFiles/ELF2UF2Build-complete.rule"
 		},
 		{
-			"file" : "/home/min20120907/Documents/pico-hcp/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-install.rule"
+			"file" : "/home/min20120907/Documents/HungchoiPass-Pico/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-install.rule"
 		},
 		{
-			"file" : "/home/min20120907/Documents/pico-hcp/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-mkdir.rule"
+			"file" : "/home/min20120907/Documents/HungchoiPass-Pico/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-mkdir.rule"
 		},
 		{
-			"file" : "/home/min20120907/Documents/pico-hcp/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-download.rule"
+			"file" : "/home/min20120907/Documents/HungchoiPass-Pico/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-download.rule"
 		},
 		{
-			"file" : "/home/min20120907/Documents/pico-hcp/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-update.rule"
+			"file" : "/home/min20120907/Documents/HungchoiPass-Pico/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-update.rule"
 		},
 		{
-			"file" : "/home/min20120907/Documents/pico-hcp/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-patch.rule"
+			"file" : "/home/min20120907/Documents/HungchoiPass-Pico/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-patch.rule"
 		},
 		{
-			"file" : "/home/min20120907/Documents/pico-hcp/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-configure.rule"
+			"file" : "/home/min20120907/Documents/HungchoiPass-Pico/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-configure.rule"
 		},
 		{
-			"file" : "/home/min20120907/Documents/pico-hcp/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-build.rule"
+			"file" : "/home/min20120907/Documents/HungchoiPass-Pico/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-build.rule"
 		}
 	],
 	"target" : 

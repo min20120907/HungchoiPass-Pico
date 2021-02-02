@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=gnu++14
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/min20120907/Documents/pico-hcp/build/_deps/pico_sdk-src/src/common/boot_uf2/include 
+CXX_INCLUDES = -I/home/min20120907/Documents/HungchoiPass-Pico/build/_deps/pico_sdk-src/src/common/boot_uf2/include 
 

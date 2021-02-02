@@ -4,6 +4,6 @@
 
 // based on PICO_CONFIG_HEADER_FILES:
 
-#include "/home/min20120907/Documents/pico-hcp/build/_deps/pico_sdk-src/src/boards/include/boards/pico.h"
+#include "/home/min20120907/Documents/HungchoiPass-Pico/build/_deps/pico_sdk-src/src/boards/include/boards/pico.h"
 
 // based on PICO_RP2040_CONFIG_HEADER_FILES:

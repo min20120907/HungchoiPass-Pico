@@ -44,10 +44,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/min20120907/Documents/pico-hcp/build/_deps/pico_sdk-subbuild
+CMAKE_SOURCE_DIR = /home/min20120907/Documents/HungchoiPass-Pico/build/_deps/pico_sdk-subbuild
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/min20120907/Documents/pico-hcp/build/_deps/pico_sdk-subbuild
+CMAKE_BINARY_DIR = /home/min20120907/Documents/HungchoiPass-Pico/build/_deps/pico_sdk-subbuild
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -74,14 +74,14 @@ clean: CMakeFiles/pico_sdk-populate.dir/clean
 CMakeFiles/pico_sdk-populate.dir/all:
 	$(MAKE) -f CMakeFiles/pico_sdk-populate.dir/build.make CMakeFiles/pico_sdk-populate.dir/depend
 	$(MAKE) -f CMakeFiles/pico_sdk-populate.dir/build.make CMakeFiles/pico_sdk-populate.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/min20120907/Documents/pico-hcp/build/_deps/pico_sdk-subbuild/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9 "Built target pico_sdk-populate"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/min20120907/Documents/HungchoiPass-Pico/build/_deps/pico_sdk-subbuild/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9 "Built target pico_sdk-populate"
 .PHONY : CMakeFiles/pico_sdk-populate.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/pico_sdk-populate.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/min20120907/Documents/pico-hcp/build/_deps/pico_sdk-subbuild/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/min20120907/Documents/HungchoiPass-Pico/build/_deps/pico_sdk-subbuild/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/pico_sdk-populate.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/min20120907/Documents/pico-hcp/build/_deps/pico_sdk-subbuild/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/min20120907/Documents/HungchoiPass-Pico/build/_deps/pico_sdk-subbuild/CMakeFiles 0
 .PHONY : CMakeFiles/pico_sdk-populate.dir/rule
 
 # Convenience name for target.

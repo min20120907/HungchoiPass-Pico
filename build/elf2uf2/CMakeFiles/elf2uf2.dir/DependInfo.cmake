@@ -4,13 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/min20120907/Documents/pico-hcp/build/_deps/pico_sdk-src/tools/elf2uf2/main.cpp" "/home/min20120907/Documents/pico-hcp/build/elf2uf2/CMakeFiles/elf2uf2.dir/main.cpp.o"
+  "/home/min20120907/Documents/HungchoiPass-Pico/build/_deps/pico_sdk-src/tools/elf2uf2/main.cpp" "/home/min20120907/Documents/HungchoiPass-Pico/build/elf2uf2/CMakeFiles/elf2uf2.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/min20120907/Documents/pico-hcp/build/_deps/pico_sdk-src/src/common/boot_uf2/include"
+  "/home/min20120907/Documents/HungchoiPass-Pico/build/_deps/pico_sdk-src/src/common/boot_uf2/include"
   )
 
 # Targets to which this target links.

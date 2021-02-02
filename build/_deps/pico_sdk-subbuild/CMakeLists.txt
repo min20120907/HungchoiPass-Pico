@@ -12,8 +12,8 @@ project(pico_sdk-populate NONE)
 include(ExternalProject)
 ExternalProject_Add(pico_sdk-populate
                      "UPDATE_DISCONNECTED" "False" "GIT_REPOSITORY" "https://github.com/raspberrypi/pico-sdk" "GIT_TAG" "master"
-                    SOURCE_DIR          "/home/min20120907/Documents/pico-hcp/build/_deps/pico_sdk-src"
-                    BINARY_DIR          "/home/min20120907/Documents/pico-hcp/build/_deps/pico_sdk-build"
+                    SOURCE_DIR          "/home/min20120907/Documents/HungchoiPass-Pico/build/_deps/pico_sdk-src"
+                    BINARY_DIR          "/home/min20120907/Documents/HungchoiPass-Pico/build/_deps/pico_sdk-build"
                     CONFIGURE_COMMAND   ""
                     BUILD_COMMAND       ""
                     INSTALL_COMMAND     ""

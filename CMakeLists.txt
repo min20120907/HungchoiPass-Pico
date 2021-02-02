@@ -15,11 +15,11 @@ pico_sdk_init()
 
 # rest of your project
 add_executable(main
-    main.c
+    main.c ina219/ina219.c
 )
 
 # Add pico_stdlib library which aggregates commonly used features
-target_link_libraries(main pico_stdlib)
+target_link_libraries(main pico_stdlib hardware_i2c)
 pico_enable_stdio_usb(main 1)
 pico_enable_stdio_uart(main 0)
 # create map/bin/hex/uf2 file in addition to ELF.

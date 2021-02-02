@@ -81,7 +81,7 @@ float supply_voltage();
 float power();
 
 // constructors
-void init();
+void init(float shunt_resistance, float max_expected_amps);
 
 // private varaibles
 int     _file_descriptor;
