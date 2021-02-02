@@ -16,3 +16,16 @@ void write_register(uint8_t register_address, uint16_t register_value)
 		perror("Failed to write to the i2c bus");
 	}
 }
+
+// Reset funciton
+void reset(){
+	write_register(__REGCONFIG,__RST);
+}
+
+// Get volatage from I2C bus
+flaot voltage() {
+	uint16_t value = read_register(__REG_BUSVOLTAGE) >> 3;
+	return float(value) * __BUS_MILLIVOLTS_LSB / 1000.0;
+}
+
+
