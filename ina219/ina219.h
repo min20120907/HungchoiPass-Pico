@@ -65,4 +65,38 @@
 
 #include <stdint.h>
 
+// public variables
+float __GAIN_VOLTS[4]   = {0.04, 0.08, 0.16, 0.32};
+int   __BUS_RANGE[2]    = {16, 32};
+
+// public functions
+void configure(int voltage_range, int gain, int bus_adc, int shunt_adc);
+void sleep();
+void wake();
+void reset();
+float voltage();
+float current();
+float shunt_voltage();
+float supply_voltage();
+float power();
+
+// constructors
+void init();
+
+// private varaibles
+int     _file_descriptor;
+float   _shunt_ohms;
+float   _max_expected_amps;
+float   _min_device_current_lsb;
+int     _voltage_range;
+int     _gain;
+float   _current_lsb;
+float   _power_lsb;
+
+//private functions
+uint16_t    read_register(uint8_t register_value);
+void        write_register(uint8_t register_address, uint16_t register_value);
+float       determine_current_lsb(float max_expected_amps, float max_possible_amps);
+void        calibrate(int bus_volts_max, float shunt_volts_max, float max_expected_amps);
+
 #endif
