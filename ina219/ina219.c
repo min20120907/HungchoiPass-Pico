@@ -117,7 +117,7 @@ uint16_t read_register(uint8_t register_address)
 	if (write(_file_descriptor, buf, 1) != 1) {
 		perror("Failed to set register");
 	}
-	sleep_ms(1000);
+	sleep_ms(1);
 	if (read(_file_descriptor, buf, 2) != 2) {
 		perror("Failed to read register value");
 	}
@@ -131,4 +131,10 @@ void init(float shunt_resistance, float max_expected_amps){
 	_shunt_ohms = shunt_resistance;
 	_max_expected_amps = max_expected_amps;
 	_min_device_current_lsb = __CALIBRATION_FACTOR / (_shunt_ohms * __MAX_CALIBRATION_VALUE);
+}
+void wake() {
+	uint16_t config = read_register(__REG_CONFIG);
+	write_register(__REG_CONFIG, config | 0x0007);
+	// 40us delay to recover from powerdown (p14 of spec)
+	sleep_ms(0.04);
 }
