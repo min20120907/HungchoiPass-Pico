@@ -1662,6 +1662,7 @@ CMakeFiles/main.dir/ina219/ina219.c.obj: generated/pico_base/pico/config_autogen
 CMakeFiles/main.dir/ina219/ina219.c.obj: generated/pico_base/pico/version.h
 
 CMakeFiles/main.dir/main.c.obj: _deps/pico_sdk-src/src/boards/include/boards/pico.h
+CMakeFiles/main.dir/main.c.obj: ../ina219/ina219.h
 CMakeFiles/main.dir/main.c.obj: ../main.c
 CMakeFiles/main.dir/main.c.obj: _deps/pico_sdk-src/src/common/pico_base/include/pico.h
 CMakeFiles/main.dir/main.c.obj: _deps/pico_sdk-src/src/common/pico_base/include/pico/assert.h
@@ -1672,10 +1673,12 @@ CMakeFiles/main.dir/main.c.obj: _deps/pico_sdk-src/src/common/pico_stdlib/includ
 CMakeFiles/main.dir/main.c.obj: _deps/pico_sdk-src/src/common/pico_time/include/pico/time.h
 CMakeFiles/main.dir/main.c.obj: _deps/pico_sdk-src/src/rp2040/hardware_regs/include/hardware/platform_defs.h
 CMakeFiles/main.dir/main.c.obj: _deps/pico_sdk-src/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h
+CMakeFiles/main.dir/main.c.obj: _deps/pico_sdk-src/src/rp2040/hardware_regs/include/hardware/regs/i2c.h
 CMakeFiles/main.dir/main.c.obj: _deps/pico_sdk-src/src/rp2040/hardware_regs/include/hardware/regs/pads_bank0.h
 CMakeFiles/main.dir/main.c.obj: _deps/pico_sdk-src/src/rp2040/hardware_regs/include/hardware/regs/sio.h
 CMakeFiles/main.dir/main.c.obj: _deps/pico_sdk-src/src/rp2040/hardware_regs/include/hardware/regs/timer.h
 CMakeFiles/main.dir/main.c.obj: _deps/pico_sdk-src/src/rp2040/hardware_regs/include/hardware/regs/uart.h
+CMakeFiles/main.dir/main.c.obj: _deps/pico_sdk-src/src/rp2040/hardware_structs/include/hardware/structs/i2c.h
 CMakeFiles/main.dir/main.c.obj: _deps/pico_sdk-src/src/rp2040/hardware_structs/include/hardware/structs/interp.h
 CMakeFiles/main.dir/main.c.obj: _deps/pico_sdk-src/src/rp2040/hardware_structs/include/hardware/structs/padsbank0.h
 CMakeFiles/main.dir/main.c.obj: _deps/pico_sdk-src/src/rp2040/hardware_structs/include/hardware/structs/sio.h
@@ -1683,6 +1686,7 @@ CMakeFiles/main.dir/main.c.obj: _deps/pico_sdk-src/src/rp2040/hardware_structs/i
 CMakeFiles/main.dir/main.c.obj: _deps/pico_sdk-src/src/rp2040/hardware_structs/include/hardware/structs/uart.h
 CMakeFiles/main.dir/main.c.obj: _deps/pico_sdk-src/src/rp2_common/hardware_base/include/hardware/address_mapped.h
 CMakeFiles/main.dir/main.c.obj: _deps/pico_sdk-src/src/rp2_common/hardware_gpio/include/hardware/gpio.h
+CMakeFiles/main.dir/main.c.obj: _deps/pico_sdk-src/src/rp2_common/hardware_i2c/include/hardware/i2c.h
 CMakeFiles/main.dir/main.c.obj: _deps/pico_sdk-src/src/rp2_common/hardware_timer/include/hardware/timer.h
 CMakeFiles/main.dir/main.c.obj: _deps/pico_sdk-src/src/rp2_common/hardware_uart/include/hardware/uart.h
 CMakeFiles/main.dir/main.c.obj: _deps/pico_sdk-src/src/rp2_common/pico_platform/include/pico/platform.h

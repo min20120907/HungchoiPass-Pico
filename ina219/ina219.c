@@ -10,6 +10,10 @@
 #include "pico/stdlib.h"
 #include "hardware/i2c.h"
 
+float __GAIN_VOLTS[4]   = {0.04, 0.08, 0.16, 0.32};
+int   __BUS_RANGE[2]    = {16, 32};
+
+
 // Method to write value into the register
 void write_register(uint8_t register_address, uint16_t register_value)
 {

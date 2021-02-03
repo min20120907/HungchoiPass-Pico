@@ -67,8 +67,6 @@
 
 #include <stdint.h>
 //public variables
-float __GAIN_VOLTS[]   = {0.04, 0.08, 0.16, 0.32};
-int   __BUS_RANGE[]    = {16, 32};
 
 // public functions
 void configure(int voltage_range, int gain, int bus_adc, int shunt_adc);

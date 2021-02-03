@@ -8,7 +8,7 @@ set(PICO_SDK_FETCH_FROM_GIT on)
 # note: this must happen before project()
 include(pico_sdk_import.cmake)
 
-project(my_project)
+project(HungchoiPass_Pico)
 
 # initialize the Raspberry Pi Pico SDK
 pico_sdk_init()

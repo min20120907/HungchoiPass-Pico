@@ -1663,6 +1663,7 @@ CMakeFiles/main.dir/ina219/ina219.c.obj
  generated/pico_base/pico/version.h
 CMakeFiles/main.dir/main.c.obj
  /home/min20120907/Documents/HungchoiPass-Pico/build/_deps/pico_sdk-src/src/boards/include/boards/pico.h
+ /home/min20120907/Documents/HungchoiPass-Pico/ina219/ina219.h
  /home/min20120907/Documents/HungchoiPass-Pico/main.c
  _deps/pico_sdk-src/src/common/pico_base/include/pico.h
  _deps/pico_sdk-src/src/common/pico_base/include/pico/assert.h
@@ -1673,10 +1674,12 @@ CMakeFiles/main.dir/main.c.obj
  _deps/pico_sdk-src/src/common/pico_time/include/pico/time.h
  _deps/pico_sdk-src/src/rp2040/hardware_regs/include/hardware/platform_defs.h
  _deps/pico_sdk-src/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h
+ _deps/pico_sdk-src/src/rp2040/hardware_regs/include/hardware/regs/i2c.h
  _deps/pico_sdk-src/src/rp2040/hardware_regs/include/hardware/regs/pads_bank0.h
  _deps/pico_sdk-src/src/rp2040/hardware_regs/include/hardware/regs/sio.h
  _deps/pico_sdk-src/src/rp2040/hardware_regs/include/hardware/regs/timer.h
  _deps/pico_sdk-src/src/rp2040/hardware_regs/include/hardware/regs/uart.h
+ _deps/pico_sdk-src/src/rp2040/hardware_structs/include/hardware/structs/i2c.h
  _deps/pico_sdk-src/src/rp2040/hardware_structs/include/hardware/structs/interp.h
  _deps/pico_sdk-src/src/rp2040/hardware_structs/include/hardware/structs/padsbank0.h
  _deps/pico_sdk-src/src/rp2040/hardware_structs/include/hardware/structs/sio.h
@@ -1684,6 +1687,7 @@ CMakeFiles/main.dir/main.c.obj
  _deps/pico_sdk-src/src/rp2040/hardware_structs/include/hardware/structs/uart.h
  _deps/pico_sdk-src/src/rp2_common/hardware_base/include/hardware/address_mapped.h
  _deps/pico_sdk-src/src/rp2_common/hardware_gpio/include/hardware/gpio.h
+ _deps/pico_sdk-src/src/rp2_common/hardware_i2c/include/hardware/i2c.h
  _deps/pico_sdk-src/src/rp2_common/hardware_timer/include/hardware/timer.h
  _deps/pico_sdk-src/src/rp2_common/hardware_uart/include/hardware/uart.h
  _deps/pico_sdk-src/src/rp2_common/pico_platform/include/pico/platform.h
