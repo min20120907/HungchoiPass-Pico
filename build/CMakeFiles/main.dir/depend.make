@@ -1662,7 +1662,6 @@ CMakeFiles/main.dir/ina219/ina219.c.obj: generated/pico_base/pico/config_autogen
 CMakeFiles/main.dir/ina219/ina219.c.obj: generated/pico_base/pico/version.h
 
 CMakeFiles/main.dir/main.c.obj: _deps/pico_sdk-src/src/boards/include/boards/pico.h
-CMakeFiles/main.dir/main.c.obj: ../ina219/ina219.h
 CMakeFiles/main.dir/main.c.obj: ../main.c
 CMakeFiles/main.dir/main.c.obj: _deps/pico_sdk-src/src/common/pico_base/include/pico.h
 CMakeFiles/main.dir/main.c.obj: _deps/pico_sdk-src/src/common/pico_base/include/pico/assert.h

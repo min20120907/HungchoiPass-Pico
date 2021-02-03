@@ -4,9 +4,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
-#include <unistd.h>
 #include <fcntl.h>
-
+#include <unistd.h>
 // Pico Libraries
 #include "pico/stdlib.h"
 #include "hardware/i2c.h"
@@ -18,8 +17,8 @@ void write_register(uint8_t register_address, uint16_t register_value)
 	buf[0] = register_address;
 	buf[1] = register_value >> 8;
 	buf[2] = register_value & 0xFF;
-	
-	if (i2c_write_blocking(I2C_PORT, _file_descriptor, buf, 3) != 3)
+
+	if (i2c_write_blocking(I2C_PORT, _file_descriptor, buf, 3,true) != 3)
 	{
 		perror("Failed to write to the i2c bus");
 	}
@@ -27,13 +26,13 @@ void write_register(uint8_t register_address, uint16_t register_value)
 
 // Reset funciton
 void reset(){
-	write_register(__REGCONFIG,__RST);
+	write_register(__REG_CONFIG,__RST);
 }
 
 // Get volatage from I2C bus
 float voltage() {
 	uint16_t value = read_register(__REG_BUSVOLTAGE) >> 3;
-	return float(value) * __BUS_MILLIVOLTS_LSB / 1000.0;
+	return (float) (value) * __BUS_MILLIVOLTS_LSB / 1000.0;
 }
 
 // shunt voltage function
@@ -118,13 +117,16 @@ uint16_t read_register(uint8_t register_address)
 	if (write(_file_descriptor, buf, 1) != 1) {
 		perror("Failed to set register");
 	}
-	usleep(1000);
+	sleep_ms(1000);
 	if (read(_file_descriptor, buf, 2) != 2) {
 		perror("Failed to read register value");
 	}
 	return (buf[0] << 8) | buf[1];
 }
-
+void ina_sleep() {
+	uint16_t config = read_register(__REG_CONFIG);
+	write_register(__REG_CONFIG, config & 0xFFF8);
+}
 void init(float shunt_resistance, float max_expected_amps){
 	_shunt_ohms = shunt_resistance;
 	_max_expected_amps = max_expected_amps;

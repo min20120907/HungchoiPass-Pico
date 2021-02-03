@@ -7,7 +7,6 @@
 
 #include <stdio.h>
 #include "pico/stdlib.h"
-#include "ina219/ina219.h"
 int main() {
     stdio_init_all();
     const uint LED_PIN = 25;

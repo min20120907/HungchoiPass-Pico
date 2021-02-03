@@ -1,6 +1,8 @@
 #ifndef _INA219_H
 #define _INA219_H
 
+#define I2C_PORT i2c0
+
 #define RANGE_16V                           0 // Range 0-16 volts
 #define RANGE_32V                           1 // Range 0-32 volts
 
@@ -64,14 +66,13 @@
 
 
 #include <stdint.h>
-
-// public variables
-float __GAIN_VOLTS[4]   = {0.04, 0.08, 0.16, 0.32};
-int   __BUS_RANGE[2]    = {16, 32};
+//public variables
+float __GAIN_VOLTS[]   = {0.04, 0.08, 0.16, 0.32};
+int   __BUS_RANGE[]    = {16, 32};
 
 // public functions
 void configure(int voltage_range, int gain, int bus_adc, int shunt_adc);
-void sleep();
+void ina_sleep();
 void wake();
 void reset();
 float voltage();

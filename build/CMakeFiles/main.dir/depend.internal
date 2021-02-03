@@ -1663,7 +1663,6 @@ CMakeFiles/main.dir/ina219/ina219.c.obj
  generated/pico_base/pico/version.h
 CMakeFiles/main.dir/main.c.obj
  /home/min20120907/Documents/HungchoiPass-Pico/build/_deps/pico_sdk-src/src/boards/include/boards/pico.h
- /home/min20120907/Documents/HungchoiPass-Pico/ina219/ina219.h
  /home/min20120907/Documents/HungchoiPass-Pico/main.c
  _deps/pico_sdk-src/src/common/pico_base/include/pico.h
  _deps/pico_sdk-src/src/common/pico_base/include/pico/assert.h
