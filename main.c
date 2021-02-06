@@ -11,6 +11,7 @@
 #include "ina219/ina219.h"
 #include "hardware/i2c.h"
 int main() {
+
     stdio_init_all();
     // This example will use I2C0 on GPIO4 (SDA) and GPIO5 (SCL) running at 400kHz.
     i2c_init(I2C_PORT, 400 * 1000);
@@ -18,6 +19,15 @@ int main() {
     gpio_set_function(5, GPIO_FUNC_I2C);
     gpio_pull_up(4);
     gpio_pull_up(5);
+    
+    // HC-05 Bluetooth module
+    // initializer UART 0 as bluetooth module
+    uart_init(uart0, 115200);
+    // set the GPIO pin mux to the UART - 0 is TX, 1 is RX
+    gpio_set_function(0, GPIO_FUNC_UART);
+    gpio_set_function(1, GPIO_FUNC_UART);
+    // Welcome message to the bluetooth
+    uart_puts(uart0, "Welcome to Hungchoi Pass Pico!");
     //const uint LED_PIN = 25;
     //gpio_init(LED_PIN);
     //gpio_set_dir(LED_PIN, GPIO_OUT);
@@ -31,7 +41,7 @@ int main() {
     configure(RANGE_16V, GAIN_8_320MV, ADC_12BIT, ADC_12BIT);
     init(SHUNT_OHMS, MAX_EXPECTED_AMPS);
     reset();
-    printf("Hello, world!\n");
+    printf("Welcome to Hungchoi Pass Pico!!\n");
     int c = 0;
     float totalPower = 0;
     while (true) {

@@ -1661,10 +1661,12 @@ CMakeFiles/main.dir/ina219/ina219.c.obj
  _deps/pico_sdk-src/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb.h
  generated/pico_base/pico/config_autogen.h
  generated/pico_base/pico/version.h
-CMakeFiles/main.dir/main.c.obj
+CMakeFiles/main.dir/_deps/pico_sdk-src/src/rp2_common/pico_standard_link/new_delete.cpp.obj
+ /home/min20120907/Documents/HungchoiPass-Pico/build/_deps/pico_sdk-src/src/rp2_common/pico_standard_link/new_delete.cpp
+CMakeFiles/main.dir/main.cc.obj
  /home/min20120907/Documents/HungchoiPass-Pico/build/_deps/pico_sdk-src/src/boards/include/boards/pico.h
  /home/min20120907/Documents/HungchoiPass-Pico/ina219/ina219.h
- /home/min20120907/Documents/HungchoiPass-Pico/main.c
+ /home/min20120907/Documents/HungchoiPass-Pico/main.cc
  _deps/pico_sdk-src/src/common/pico_base/include/pico.h
  _deps/pico_sdk-src/src/common/pico_base/include/pico/assert.h
  _deps/pico_sdk-src/src/common/pico_base/include/pico/config.h
@@ -1695,5 +1697,3 @@ CMakeFiles/main.dir/main.c.obj
  _deps/pico_sdk-src/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb.h
  generated/pico_base/pico/config_autogen.h
  generated/pico_base/pico/version.h
-CMakeFiles/main.dir/_deps/pico_sdk-src/src/rp2_common/pico_standard_link/new_delete.cpp.obj
- /home/min20120907/Documents/HungchoiPass-Pico/build/_deps/pico_sdk-src/src/rp2_common/pico_standard_link/new_delete.cpp

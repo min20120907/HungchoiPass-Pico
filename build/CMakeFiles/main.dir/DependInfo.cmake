@@ -140,7 +140,6 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/min20120907/Documents/HungchoiPass-Pico/build/_deps/pico_sdk-src/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c" "/home/min20120907/Documents/HungchoiPass-Pico/build/CMakeFiles/main.dir/_deps/pico_sdk-src/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj"
   "/home/min20120907/Documents/HungchoiPass-Pico/build/_deps/pico_sdk-src/src/rp2_common/pico_stdlib/stdlib.c" "/home/min20120907/Documents/HungchoiPass-Pico/build/CMakeFiles/main.dir/_deps/pico_sdk-src/src/rp2_common/pico_stdlib/stdlib.c.obj"
   "/home/min20120907/Documents/HungchoiPass-Pico/ina219/ina219.c" "/home/min20120907/Documents/HungchoiPass-Pico/build/CMakeFiles/main.dir/ina219/ina219.c.obj"
-  "/home/min20120907/Documents/HungchoiPass-Pico/main.c" "/home/min20120907/Documents/HungchoiPass-Pico/build/CMakeFiles/main.dir/main.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
@@ -214,6 +213,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   )
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/min20120907/Documents/HungchoiPass-Pico/build/_deps/pico_sdk-src/src/rp2_common/pico_standard_link/new_delete.cpp" "/home/min20120907/Documents/HungchoiPass-Pico/build/CMakeFiles/main.dir/_deps/pico_sdk-src/src/rp2_common/pico_standard_link/new_delete.cpp.obj"
+  "/home/min20120907/Documents/HungchoiPass-Pico/main.cc" "/home/min20120907/Documents/HungchoiPass-Pico/build/CMakeFiles/main.dir/main.cc.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

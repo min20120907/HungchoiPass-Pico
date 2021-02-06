@@ -63,7 +63,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/main.dir/_deps/pico_sdk-src/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj"
   "CMakeFiles/main.dir/_deps/pico_sdk-src/src/rp2_common/pico_stdlib/stdlib.c.obj"
   "CMakeFiles/main.dir/ina219/ina219.c.obj"
-  "CMakeFiles/main.dir/main.c.obj"
+  "CMakeFiles/main.dir/main.cc.obj"
   "main.elf"
   "main.pdb"
 )

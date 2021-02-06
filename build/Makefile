@@ -1705,32 +1705,32 @@ ina219/ina219.c.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/ina219/ina219.c.s
 .PHONY : ina219/ina219.c.s
 
-main.obj: main.c.obj
+main.obj: main.cc.obj
 
 .PHONY : main.obj
 
 # target to build an object file
-main.c.obj:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.c.obj
-.PHONY : main.c.obj
+main.cc.obj:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cc.obj
+.PHONY : main.cc.obj
 
-main.i: main.c.i
+main.i: main.cc.i
 
 .PHONY : main.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.c.i
-.PHONY : main.c.i
+main.cc.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cc.i
+.PHONY : main.cc.i
 
-main.s: main.c.s
+main.s: main.cc.s
 
 .PHONY : main.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.c.s
-.PHONY : main.c.s
+main.cc.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cc.s
+.PHONY : main.cc.s
 
 # Help Target
 help:

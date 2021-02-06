@@ -57,18 +57,18 @@ include CMakeFiles/main.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/main.dir/flags.make
 
-CMakeFiles/main.dir/main.c.obj: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/main.c.obj: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/min20120907/Documents/HungchoiPass-Pico/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/main.dir/main.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/main.dir/main.c.obj   -c /home/min20120907/Documents/HungchoiPass-Pico/main.c
+CMakeFiles/main.dir/main.cc.obj: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/main.cc.obj: ../main.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/min20120907/Documents/HungchoiPass-Pico/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/main.cc.obj"
+	/usr/bin/arm-none-eabi-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/main.cc.obj -c /home/min20120907/Documents/HungchoiPass-Pico/main.cc
 
-CMakeFiles/main.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/main.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/min20120907/Documents/HungchoiPass-Pico/main.c > CMakeFiles/main.dir/main.c.i
+CMakeFiles/main.dir/main.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/main.cc.i"
+	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/min20120907/Documents/HungchoiPass-Pico/main.cc > CMakeFiles/main.dir/main.cc.i
 
-CMakeFiles/main.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/main.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/min20120907/Documents/HungchoiPass-Pico/main.c -o CMakeFiles/main.dir/main.c.s
+CMakeFiles/main.dir/main.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/main.cc.s"
+	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/min20120907/Documents/HungchoiPass-Pico/main.cc -o CMakeFiles/main.dir/main.cc.s
 
 CMakeFiles/main.dir/ina219/ina219.c.obj: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/ina219/ina219.c.obj: ../ina219/ina219.c
@@ -816,7 +816,7 @@ CMakeFiles/main.dir/_deps/pico_sdk-src/src/rp2_common/hardware_i2c/i2c.c.s: cmak
 
 # Object files for target main
 main_OBJECTS = \
-"CMakeFiles/main.dir/main.c.obj" \
+"CMakeFiles/main.dir/main.cc.obj" \
 "CMakeFiles/main.dir/ina219/ina219.c.obj" \
 "CMakeFiles/main.dir/_deps/pico_sdk-src/src/rp2_common/pico_stdlib/stdlib.c.obj" \
 "CMakeFiles/main.dir/_deps/pico_sdk-src/src/rp2_common/hardware_gpio/gpio.c.obj" \
@@ -885,7 +885,7 @@ main_OBJECTS = \
 # External object files for target main
 main_EXTERNAL_OBJECTS =
 
-main.elf: CMakeFiles/main.dir/main.c.obj
+main.elf: CMakeFiles/main.dir/main.cc.obj
 main.elf: CMakeFiles/main.dir/ina219/ina219.c.obj
 main.elf: CMakeFiles/main.dir/_deps/pico_sdk-src/src/rp2_common/pico_stdlib/stdlib.c.obj
 main.elf: CMakeFiles/main.dir/_deps/pico_sdk-src/src/rp2_common/hardware_gpio/gpio.c.obj
