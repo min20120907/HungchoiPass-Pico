@@ -58,6 +58,7 @@ try:
                 print_dual("Voltage: ", round(voltage() *100)/1000,"V")
                 print_dual("Power: ", round(power()*1000)/100000)
                 c+=1
+                time.sleep(1)
             else:
                 print("Authentication error")
             
