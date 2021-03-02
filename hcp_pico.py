@@ -64,9 +64,9 @@ try:
                 totalPower+=round(power()*100)/1000/100/3600
                 print_dual("Card detected %s" % uidToString(uid))
                 print_dual("INA219 Sensor ",c, ":")
-                print_dual("Current: ", round(current()*1000)/1000000,"A")
-                print_dual("Voltage: ", round(voltage() *100)/1000,"V")
-                print_dual("Power: ", round(power()*1000)/100000)
+                print_dual("Current :{:7.4f} A".format(current / 1000))
+                print_dual("Voltage  :{:5.2f} V".format(bus_voltage + shunt_voltage))
+                print_dual("Power   :{:5.2f} W".format(power))
                 c+=1
                 sleep(1)
             else:
