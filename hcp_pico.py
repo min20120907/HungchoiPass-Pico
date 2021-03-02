@@ -67,6 +67,8 @@ try:
                 print_dual("Current :{:7.4f} A".format(current / 1000))
                 print_dual("Voltage  :{:5.2f} V".format(bus_voltage + shunt_voltage))
                 print_dual("Power   :{:5.2f} W".format(power))
+                if ina219.overflow:
+                    print_dual("Internal Math Overflow Detected!")
                 c+=1
                 sleep(1)
             else:
