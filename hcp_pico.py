@@ -22,6 +22,10 @@ def print_dual(string):
 led = Pin(11, Pin.OUT)
 
 # I2C initialization
+SCL = board.GP15
+SDA = board.GP14
+i2c_bus = busio.I2C(SCL, SDA)
+
 ina219 = INA219(i2c_bus, 0x40) # Accessory Supply
 range = ina219.bus_voltage_range
 
@@ -61,12 +65,13 @@ try:
             (stat, uid) = reader.SelectTagSN()
 
             if stat == reader.OK:
-                totalPower+=round(power()*100)/1000/100/3600
+                totalPower+=power*3600/1000
                 print_dual("Card detected %s" % uidToString(uid))
                 print_dual("INA219 Sensor ",c, ":")
                 print_dual("Current :{:7.4f} A".format(current / 1000))
                 print_dual("Voltage  :{:5.2f} V".format(bus_voltage + shunt_voltage))
                 print_dual("Power   :{:5.2f} W".format(power))
+                print_dual("Electricity: ", totalPower)
                 if ina219.overflow:
                     print_dual("Internal Math Overflow Detected!")
                 c+=1
