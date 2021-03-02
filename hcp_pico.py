@@ -1,6 +1,11 @@
+import board
+import busio
+import time
+from adafruit_ina219 import ADCResolution, BusVoltageRange, INA219
 from mfrc522 import MFRC522
 from machine import Pin, UART, I2C
 from rp2 import PIO, StateMachine, asm_pio
+from time import sleep
 
 def uidToString(uid):
     mystring = ""
@@ -17,10 +22,15 @@ def print_dual(string):
 led = Pin(11, Pin.OUT)
 
 # I2C initialization
-i2c = I2C(7, scl=Pin(9), sda=Pin(8), freq=100000) 
-i2c.scan()
-i2c.writeto(76, b'123')
-i2c.readfrom(76, 4)
+ina219 = INA219(i2c_bus, 0x40) # Accessory Supply
+range = ina219.bus_voltage_range
+
+# optional : change configuration to use 32 samples averaging for both bus voltage and shunt voltage
+ina219.bus_adc_resolution = ADCResolution.ADCRES_12BIT_32S
+ina219.shunt_adc_resolution = ADCResolution.ADCRES_12BIT_32S
+
+# optional : change voltage range to 16V
+ina219.bus_voltage_range = BusVoltageRange.RANGE_16V
 
 # UART initialization
 uart = UART(0, 9600)
@@ -58,7 +68,7 @@ try:
                 print_dual("Voltage: ", round(voltage() *100)/1000,"V")
                 print_dual("Power: ", round(power()*1000)/100000)
                 c+=1
-                time.sleep(1)
+                sleep(1)
             else:
                 print("Authentication error")
             
