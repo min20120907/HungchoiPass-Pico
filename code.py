@@ -1,7 +1,5 @@
-import board
-import busio
 import time
-from adafruit_ina219 import ADCResolution, BusVoltageRange, INA219
+from ina219 import INA219
 from mfrc522 import MFRC522
 from machine import Pin, UART, I2C
 from rp2 import PIO, StateMachine, asm_pio
@@ -21,29 +19,16 @@ def print_dual(string):
 # LED pin initialization
 led = Pin(11, Pin.OUT)
 
-# I2C initialization
-SCL = board.GP15
-SDA = board.GP14
-i2c_bus = busio.I2C(SCL, SDA)
+# I2C INA219 initialization
+# Edit to match interface the sensor is connect to (1 or 2).
+I2C_INTERFACE_NO = 1
+SHUNT_OHMS = 0.1
 
-ina219 = INA219(i2c_bus, 0x40) # Accessory Supply
-range = ina219.bus_voltage_range
-
-# optional : change configuration to use 32 samples averaging for both bus voltage and shunt voltage
-ina219.bus_adc_resolution = ADCResolution.ADCRES_12BIT_32S
-ina219.shunt_adc_resolution = ADCResolution.ADCRES_12BIT_32S
-
-# optional : change voltage range to 16V
-ina219.bus_voltage_range = BusVoltageRange.RANGE_16V
+ina = INA219(SHUNT_OHMS, I2C(I2C_INTERFACE_NO))
+ina.configure()
 
 # UART initialization
 uart = UART(0, 9600)
-
-# Set default values of INA219 sensor
-SHUNT_OHMS = 0.1
-MAX_EXPECTED_AMPS = 3.2
-INITIAL_CHARGE = 15000.0
-INTERVAL = 1000.0
 
 # RC522 SPI initialization
 reader = MFRC522(spi_id=0,sck=2,miso=4,mosi=3,cs=1,rst=0)
@@ -65,15 +50,13 @@ try:
             (stat, uid) = reader.SelectTagSN()
 
             if stat == reader.OK:
-                totalPower+=power*3600/1000
+                totalPower+=ina.power()*3600/1000
                 print_dual("Card detected %s" % uidToString(uid))
                 print_dual("INA219 Sensor ",c, ":")
-                print_dual("Current :{:7.4f} A".format(current / 1000))
-                print_dual("Voltage  :{:5.2f} V".format(bus_voltage + shunt_voltage))
-                print_dual("Power   :{:5.2f} W".format(power))
+                print_dual("Current :{:7.4f} A".format(ina.current() / 1000))
+                print_dual("Voltage  :{:5.2f} V".format(ina.bus_voltage() + ina.shunt_voltage()))
+                print_dual("Power   :{:5.2f} W".format(ina.power()))
                 print_dual("Electricity: ", totalPower)
-                if ina219.overflow:
-                    print_dual("Internal Math Overflow Detected!")
                 c+=1
                 sleep(1)
             else:
@@ -81,4 +64,6 @@ try:
             
 except KeyboardInterrupt:
     print("Bye")
+
+
 
