@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">虹彩通</string>
+    <string name="action_settings">設定</string>
+    <string name="hello_world">你好，世界</string>
+    <string name="none_paired">尚未配對裝置</string>
+    <string name="tutorial">按下\"連接\"即可計算資料</string>
+    <string name="nofind">請按下按鈕設定配對密碼：1234</string>
+    <string name="connect">連接中...</string>
+    <string name="notsupport">裝置無法支援藍牙</string>
+    <string name="cardnumber">"卡號 : "</string>
+    <string name="current">"電流 : "</string>
+    <string name="connectBT">連接藍牙</string>
+    <string name="connect_failed">連接失敗</string>
+    <string name="BT_ON">...藍牙開啓...</string>
+    <string name="contactus">聯絡我們</string>
+    <string name="aboutus">關於我們</string>
+    <string name="electricity">"電量 : "</string>
+    <string name="cardbalance">"卡片餘額 : "</string>
+    <string name="gain">"獲得金額 : "</string>
+    <string name="time_spent">"騎乘時間 : "</string>
+    <string name="buy">購買虹彩通</string>
+    <string name="web">官方網站</string>
+    <string name="more">更多功能</string>
+</resources>

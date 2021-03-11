@@ -1,0 +1,189 @@
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/actBackground"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+
+
+    >
+
+    <TextView
+        android:id="@+id/testView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txtString"
+        android:text=""
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/txtString"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/testView1"
+        android:layout_alignParentBottom="true"
+        android:text=""
+        android:textSize="15sp"
+        android:layout_alignStart="@+id/testView1" />
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="57sp"
+            android:layout_gravity="center"
+            android:cardCornerRadius="4dp">
+
+            <TextView
+                android:id="@+id/sensorView0"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_weight="1"
+                android:background="#91d9f9"
+                android:text="@string/cardnumber"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="24sp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="16dp"
+
+                />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="10sp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_2"
+            android:layout_width="match_parent"
+            android:layout_height="57sp"
+            android:layout_gravity="center"
+            android:cardCornerRadius="4dp">
+
+            <TextView
+                android:id="@+id/sensorView1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/sensorView0"
+                android:layout_alignParentStart="true"
+                android:layout_weight="1"
+                android:background="#b1c9ff"
+                android:text="@string/current"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="24sp"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="162dp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="10sp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_3"
+            android:layout_width="match_parent"
+            android:layout_height="57sp"
+            android:layout_gravity="center"
+            card_view:cardCornerRadius="4dp">
+
+            <TextView
+                android:id="@+id/sensorView2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#a4c0ff"
+                android:text="@string/electricity"
+                android:textSize="24sp" />
+        </androidx.cardview.widget.CardView>
+        >
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="10sp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_4"
+            android:layout_width="match_parent"
+            android:layout_height="57sp"
+            android:layout_gravity="center"
+            card_view:cardCornerRadius="4dp">
+
+            <TextView
+                android:id="@+id/sensorView3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#d5aef9"
+                android:text="@string/cardbalance"
+                android:textSize="24sp" />
+        </androidx.cardview.widget.CardView>
+        >
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="match_parent"
+            android:layout_height="10sp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_5"
+            android:layout_width="match_parent"
+            android:layout_height="57sp"
+            android:layout_gravity="center"
+            card_view:cardCornerRadius="4dp">
+
+
+            <TextView
+                android:id="@+id/sensorView4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#fca6f6"
+                android:text="@string/gain"
+                android:textSize="24sp" />
+        </androidx.cardview.widget.CardView>
+        >
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="10sp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_6"
+            android:layout_width="match_parent"
+            android:layout_height="57sp"
+            android:layout_gravity="center"
+            card_view:cardCornerRadius="4dp">
+
+
+            <TextView
+                android:id="@+id/sensorView5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#ff7ef6"
+                android:text="@string/time_spent"
+                android:textSize="24sp" />
+        </androidx.cardview.widget.CardView>
+
+    
+    </LinearLayout>
+
+</RelativeLayout>
