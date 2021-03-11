@@ -42,7 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="57sp"
             android:layout_gravity="center"
-            android:cardCornerRadius="4dp">
+            card_view:cardCornerRadius="4dp">
 
             <TextView
                 android:id="@+id/sensorView0"
@@ -58,7 +58,7 @@
                 tools:layout_editor_absoluteX="16dp"
                 tools:layout_editor_absoluteY="16dp"
 
-                />
+                android:layout_alignParentLeft="true" />
 
         </androidx.cardview.widget.CardView>
 
@@ -72,7 +72,7 @@
             android:layout_width="match_parent"
             android:layout_height="57sp"
             android:layout_gravity="center"
-            android:cardCornerRadius="4dp">
+            card_view:cardCornerRadius="4dp">
 
             <TextView
                 android:id="@+id/sensorView1"
@@ -86,7 +86,8 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textSize="24sp"
                 tools:layout_editor_absoluteX="8dp"
-                tools:layout_editor_absoluteY="162dp" />
+                tools:layout_editor_absoluteY="162dp"
+                android:layout_alignParentLeft="true" />
 
         </androidx.cardview.widget.CardView>
 
@@ -111,7 +112,6 @@
                 android:text="@string/electricity"
                 android:textSize="24sp" />
         </androidx.cardview.widget.CardView>
-        >
 
         <TextView
             android:id="@+id/textView8"
@@ -134,7 +134,7 @@
                 android:text="@string/cardbalance"
                 android:textSize="24sp" />
         </androidx.cardview.widget.CardView>
-        >
+
 
         <TextView
             android:id="@+id/textView10"
@@ -158,7 +158,6 @@
                 android:text="@string/gain"
                 android:textSize="24sp" />
         </androidx.cardview.widget.CardView>
-        >
 
         <TextView
             android:id="@+id/textView9"
