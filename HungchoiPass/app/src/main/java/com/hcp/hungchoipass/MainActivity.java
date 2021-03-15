@@ -29,7 +29,7 @@ public class MainActivity extends Activity  {
   private BluetoothAdapter btAdapter = null;
   private BluetoothSocket btSocket = null;
   private StringBuilder recDataString = new StringBuilder();
-   
+
   private ConnectedThread mConnectedThread;
 /*    HttpClient client;
     HttpGet get;
@@ -96,14 +96,14 @@ public class MainActivity extends Activity  {
 
 
 
-    //Link the buttons and textViews to respective views 
+    //Link the buttons and textViews to respective views
 
     getActionBar().setLogo(R.drawable.ic_launcher);
     getActionBar().setDisplayUseLogoEnabled(true);
     getActionBar().setHomeButtonEnabled(true);
     getActionBar().setDisplayHomeAsUpEnabled(true);
-    txtString = (TextView) findViewById(R.id.txtString); 
-    txtStringLength = (TextView) findViewById(R.id.testView1);   
+    txtString = (TextView) findViewById(R.id.txtString);
+    txtStringLength = (TextView) findViewById(R.id.testView1);
     sensorView0 = (TextView) findViewById(R.id.sensorView0);
     sensorView1 = (TextView) findViewById(R.id.sensorView1);
     sensorView2 = (TextView) findViewById(R.id.sensorView2);
@@ -174,66 +174,66 @@ public class MainActivity extends Activity  {
                     recDataString.delete(0, recDataString.length()); 					//clear all string data
                    // strIncom =" ";
                     dataInPrint = " ";
-                }            
+                }
             }
         }
     };
-      
+
     btAdapter = BluetoothAdapter.getDefaultAdapter();       // get Bluetooth adapter
-    checkBTState();	
-    
-    
+    checkBTState();
+
+
 
   }
 
-   
+
   private BluetoothSocket createBluetoothSocket(BluetoothDevice device) throws IOException {
-      
+
       return  device.createRfcommSocketToServiceRecord(BTMODULEUUID);
       //creates secure outgoing connecetion with BT device using UUID
   }
-    
+
   @Override
   public void onResume() {
     super.onResume();
-    
+
     //Get MAC address from DeviceListActivity via intent
     Intent intent = getIntent();
-    
+      //create device and set the MAC address
+
     //Get the MAC address from the DeviceListActivty via EXTRA
     address = intent.getStringExtra(DeviceListActivity.EXTRA_DEVICE_ADDRESS);
-
+      BluetoothDevice device = btAdapter.getRemoteDevice(address);
     //create device and set the MAC address
-    BluetoothDevice device = btAdapter.getRemoteDevice(address);
-     
-    try {
-        btSocket = createBluetoothSocket(device);
-    } catch (IOException e) {
-    	Toast.makeText(getBaseContext(), "Socket creation failed", Toast.LENGTH_LONG).show();
-    }  
+      try {
+          btSocket = createBluetoothSocket(device);
+      } catch (IOException e) {
+          Toast.makeText(getBaseContext(), "Socket creation failed", Toast.LENGTH_LONG).show();
+      }
+
     // Establish the Bluetooth socket connection.
-    try 
+    try
     {
       btSocket.connect();
     } catch (IOException e) {
-      try 
+      try
       {
         btSocket.close();
-      } catch (IOException e2) 
+      } catch (IOException e2)
       {
-    	//insert code to deal with this 
+    	//insert code to deal with this
       }
-    } 
+    }
     mConnectedThread = new ConnectedThread(btSocket);
     mConnectedThread.start();
-    
+
     //I send a character when resuming.beginning transmission to check device is connected
     //If it is not an exception will be thrown in the write method and finish() will be called
     mConnectedThread.write("x");
   }
-  
+
   @Override
-  public void onPause() 
+  public void onPause()
   {
     super.onPause();
     try
@@ -241,14 +241,14 @@ public class MainActivity extends Activity  {
     //Don't leave Bluetooth sockets open when leaving activity
       btSocket.close();
     } catch (IOException e2) {
-    	//insert code to deal with this 
+    	//insert code to deal with this
     }
   }
 
- //Checks that the Android device Bluetooth is available and prompts to be turned on if off 
+ //Checks that the Android device Bluetooth is available and prompts to be turned on if off
   private void checkBTState() {
- 
-    if(btAdapter==null) { 
+
+    if(btAdapter==null) {
     	Toast.makeText(getBaseContext(), R.string.notsupport, Toast.LENGTH_LONG).show();
     } else {
       if (btAdapter.isEnabled()) {
@@ -263,7 +263,7 @@ public class MainActivity extends Activity  {
   private class ConnectedThread extends Thread {
         private final InputStream mmInStream;
         private final OutputStream mmOutStream;
-      
+
         //creation of the connect thread
         public ConnectedThread(BluetoothSocket socket) {
             InputStream tmpIn = null;
@@ -274,14 +274,14 @@ public class MainActivity extends Activity  {
                 tmpIn = socket.getInputStream();
                 tmpOut = socket.getOutputStream();
             } catch (IOException e) { }
-      
+
             mmInStream = tmpIn;
             mmOutStream = tmpOut;
         }
-        
-      
+
+
         public void run() {
-            byte[] buffer = new byte[256];  
+            byte[] buffer = new byte[256];
             int bytes;
 
 
@@ -291,7 +291,7 @@ public class MainActivity extends Activity  {
                     bytes = mmInStream.read(buffer);        	//read bytes from input buffer
                     String readMessage = new String(buffer, 0, bytes);
                     // Send the obtained bytes to the UI Activity via handler
-                    bluetoothIn.obtainMessage(handlerState, bytes, -1, readMessage).sendToTarget(); 
+                    bluetoothIn.obtainMessage(handlerState, bytes, -1, readMessage).sendToTarget();
                 } catch (IOException e) {
                     break;
                 }
@@ -302,13 +302,13 @@ public class MainActivity extends Activity  {
             byte[] msgBuffer = input.getBytes();           //converts entered String into bytes
             try {
                 mmOutStream.write(msgBuffer);                //write bytes over BT connection via outstream
-            } catch (IOException e) {  
+            } catch (IOException e) {
             	//if you cannot write, close the application
             	Toast.makeText(getBaseContext(), R.string.connect_failed, Toast.LENGTH_LONG).show();
             	finish();
-            	
+
               }
         	}
     	}
 }
-    
+

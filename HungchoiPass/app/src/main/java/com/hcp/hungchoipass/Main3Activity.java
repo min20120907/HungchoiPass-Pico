@@ -1,14 +1,16 @@
 package com.hcp.hungchoipass;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Main3Activity extends AppCompatActivity {
+public class Main3Activity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
     }
+
 }

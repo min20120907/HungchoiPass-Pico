@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.hcp.hungchoipass.MainActivity;
+
 import java.util.Set;
 
 public class DeviceListActivity extends Activity {
@@ -23,7 +25,7 @@ public class DeviceListActivity extends Activity {
     // declare button for launching website and textview for connection status
     Button tlbutton;
     TextView textView1;
-    
+
     // EXTRA string to send on to mainactivity
     public static String EXTRA_DEVICE_ADDRESS = "device_address";
 
@@ -56,70 +58,75 @@ public class DeviceListActivity extends Activity {
             }
         });
 
+
+
     }
-    
+    public void buycard(View v){
+        Intent i = new Intent(DeviceListActivity.this, Main3Activity.class);
+        startActivity(i);
+    }
     @Override
-    public void onResume() 
+    public void onResume()
     {
-    	super.onResume();
-    	//*************** 
-    	checkBTState();
+        super.onResume();
+        //***************
+        checkBTState();
 
 
 
-    	// Initialize array adapter for paired devices
-    	mPairedDevicesArrayAdapter = new ArrayAdapter<String>(this, R.layout.device_name);
+        // Initialize array adapter for paired devices
+        mPairedDevicesArrayAdapter = new ArrayAdapter<String>(this, R.layout.device_name);
 
-    	// Find and set up the ListView for paired devices
-
-
+        // Find and set up the ListView for paired devices
 
 
-    	// Get the local Bluetooth adapter
-    	mBtAdapter = BluetoothAdapter.getDefaultAdapter();
-
-    	// Get a set of currently paired devices and append to 'pairedDevices'
-    	Set<BluetoothDevice> pairedDevices = mBtAdapter.getBondedDevices();
-
-    	// Add previosuly paired devices to the array
-    	if (pairedDevices.size() > 0) {
-
-    		for (BluetoothDevice device : pairedDevices) {
-    			mPairedDevicesArrayAdapter.add(device.getName() + "\n" + device.getAddress());
-    		}
-    	} else {
-    		String noDevices = getResources().getText(R.string.none_paired).toString();
-    		mPairedDevicesArrayAdapter.add(noDevices);
-    	}
-  }
 
 
-        // Set up on-click listener for the list (nicked this - unsure)
-        public void onClick() {
+        // Get the local Bluetooth adapter
+        mBtAdapter = BluetoothAdapter.getDefaultAdapter();
 
-            // Make an intent to start next activity while taking an extra which is the MAC address.
-            Intent i = new Intent(DeviceListActivity.this, MainActivity.class);
-            i.putExtra(EXTRA_DEVICE_ADDRESS, "98:D3:31:FB:43:61");
-            startActivity(i);
+        // Get a set of currently paired devices and append to 'pairedDevices'
+        Set<BluetoothDevice> pairedDevices = mBtAdapter.getBondedDevices();
 
+        // Add previosuly paired devices to the array
+        if (pairedDevices.size() > 0) {
+
+            for (BluetoothDevice device : pairedDevices) {
+                mPairedDevicesArrayAdapter.add(device.getName() + "\n" + device.getAddress());
+            }
+        } else {
+            String noDevices = getResources().getText(R.string.none_paired).toString();
+            mPairedDevicesArrayAdapter.add(noDevices);
         }
+    }
+
+
+    // Set up on-click listener for the list (nicked this - unsure)
+    public void onClick() {
+
+        // Make an intent to start next activity while taking an extra which is the MAC address.
+        Intent i = new Intent(DeviceListActivity.this, MainActivity.class);
+        i.putExtra(EXTRA_DEVICE_ADDRESS, "98:D3:31:FB:43:61");
+        startActivity(i);
+
+    }
 
 
     private void checkBTState() {
         // Check device has Bluetooth and that it is turned on
-    	 mBtAdapter=BluetoothAdapter.getDefaultAdapter(); // CHECK THIS OUT THAT IT WORKS!!!
-        if(mBtAdapter==null) { 
-        	Toast.makeText(getBaseContext(), "@string/notsupport", Toast.LENGTH_SHORT).show();
+        mBtAdapter=BluetoothAdapter.getDefaultAdapter(); // CHECK THIS OUT THAT IT WORKS!!!
+        if(mBtAdapter==null) {
+            Toast.makeText(getBaseContext(), "@string/notsupport", Toast.LENGTH_SHORT).show();
         } else {
-          if (mBtAdapter.isEnabled()) {
-            Log.d(TAG, getString(R.string.BT_ON));
+            if (mBtAdapter.isEnabled()) {
+                Log.d(TAG, getString(R.string.BT_ON));
 
-          } else {
-            //Prompt user to turn on Bluetooth
-            Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-            startActivityForResult(enableBtIntent, 1);
+            } else {
+                //Prompt user to turn on Bluetooth
+                Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+                startActivityForResult(enableBtIntent, 1);
 
-          }
-          }
+            }
         }
+    }
 }

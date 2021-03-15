@@ -22,4 +22,13 @@
     <string name="buy">購買虹彩通</string>
     <string name="web">官方網站</string>
     <string name="more">更多功能</string>
+    <string name="button_scan">搜尋</string>
+    <string name="paired_devices">已配對裝置</string>
+    <string name="title_paired_devices">已配對裝置</string>
+    <string name="scanning">搜尋中...</string>
+    <string name="select_device">請選擇裝置</string>
+    <string name="new_devices">新增裝置</string>
+    <string name="none_found"> 找不到裝置</string>
+    <string name="title_new_devices">新增裝置</string>
+    <string name="title_other_devices">Other Devices</string>
 </resources>

@@ -31,7 +31,6 @@
                 android:background="@android:color/holo_blue_dark"
                 android:drawableLeft="@drawable/ic_bluetooth_white_48dp"
                 android:gravity="center_vertical|left"
-                android:onClick="connect"
                 android:text="@string/connectBT"
                 android:textColor="@color/background_material_light"
                 android:textSize="30sp" />
@@ -58,7 +57,7 @@
             android:background="@android:color/holo_blue_light"
             android:drawableLeft="@drawable/ic_credit_card_white_48dp"
             android:gravity="center_vertical|left"
-            android:onClick="connect"
+            android:onClick="buycard"
             android:text="@string/buy"
             android:textColor="@color/background_material_light"
             android:textSize="30sp" />

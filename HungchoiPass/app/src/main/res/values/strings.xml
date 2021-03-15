@@ -23,4 +23,13 @@
     <string name="buy">Buy Cards</string>
     <string name="web">Official Website</string>
     <string name="more">More Features</string>
+    <string name="button_scan">Scan</string>
+    <string name="paired_devices">Paired Devices</string>
+    <string name="title_paired_devices">Paired Devices</string>
+    <string name="scanning">Scanning...</string>
+    <string name="select_device">Select device</string>
+    <string name="none_found"> Not found</string>
+    <string name="new_devices">New Devices</string>
+    <string name="title_new_devices">New devices</string>
+    <string name="title_other_devices">Other Devices</string>
 </resources>
