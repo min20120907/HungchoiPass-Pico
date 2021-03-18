@@ -31,4 +31,5 @@
     <string name="none_found"> 找不到裝置</string>
     <string name="title_new_devices">新增裝置</string>
     <string name="title_other_devices">Other Devices</string>
+    <string name="name">Name</string>
 </resources>

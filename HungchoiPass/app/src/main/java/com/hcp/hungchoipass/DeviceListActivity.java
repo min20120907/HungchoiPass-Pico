@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -61,6 +62,12 @@ public class DeviceListActivity extends Activity {
 
 
     }
+
+    public void openWebsite(View v) {
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com"));
+        startActivity(browserIntent);
+    }
+
     public void buycard(View v){
         Intent i = new Intent(DeviceListActivity.this, Main3Activity.class);
         startActivity(i);

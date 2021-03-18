@@ -29,13 +29,9 @@ public class Main2Activity extends SQLiteOpenHelper {
     private final static String CARDBALANCE="cardbalance";//column name 4
     private final static String GAIN="gain";//column name 5
     public Main2Activity(Context context) {
-
-
-
         super(context, DB_NAME, null, DB_VERSION);
         return;
     }
-
 
 
     public Cursor getCurrent(String cardnumber) {

@@ -22,7 +22,7 @@ import java.util.UUID;
 public class MainActivity extends Activity  {
 
   Button btnOn, btnOff;
-  TextView txtArduino, txtString, txtStringLength, sensorView0,sensorView5, sensorView1, sensorView2, sensorView3, sensorView4;
+  TextView txtArduino,txtString, txtStringLength, sensorView0,sensorView5, sensorView1, sensorView2, sensorView3, sensorView4;
   Handler bluetoothIn;
 
   final int handlerState = 0;        				 //used to identify handler message
@@ -31,13 +31,6 @@ public class MainActivity extends Activity  {
   private StringBuilder recDataString = new StringBuilder();
 
   private ConnectedThread mConnectedThread;
-/*    HttpClient client;
-    HttpGet get;
-    HttpResponse response;
-    String _url = "http://120.126.84.27/update_current.php?";
-    String result;
-    StringBuilder stringBuf;
-    HttpEntity resEntity;*/
   // SPP UUID service - this should work for most devices
   private static final UUID BTMODULEUUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
 
@@ -63,15 +56,8 @@ public class MainActivity extends Activity  {
             secs%=60;
 
             int milliseconds=(int)(updateTime%1000);
-
-            sensorView5.setText(getResources().getString(R.string.time_spent)+"\n"+hours+":"+mins+":"+String.format("%02d",secs)+":"
-
-                    +String.format("%03d",milliseconds));
-
+            sensorView5.setText(getResources().getString(R.string.time_spent)+"\n"+hours+":"+mins+":"+String.format("%02d",secs)+":" +String.format("%03d",milliseconds));
             customHandler.postDelayed(this,0);
-
-
-
         }
 
     };
@@ -83,25 +69,17 @@ public class MainActivity extends Activity  {
 
 @Override
   public void onCreate(Bundle savedInstanceState) {
-
     super.onCreate(savedInstanceState);
-
     setContentView(R.layout.activity_main);
+
     startTime = SystemClock.uptimeMillis();
-
-
-
     customHandler.postDelayed(updateTimerThread,0);
-
-
-
-
     //Link the buttons and textViews to respective views
-
     getActionBar().setLogo(R.drawable.ic_launcher);
     getActionBar().setDisplayUseLogoEnabled(true);
     getActionBar().setHomeButtonEnabled(true);
     getActionBar().setDisplayHomeAsUpEnabled(true);
+    // TextViews proclaim
     txtString = (TextView) findViewById(R.id.txtString);
     txtStringLength = (TextView) findViewById(R.id.testView1);
     sensorView0 = (TextView) findViewById(R.id.sensorView0);
@@ -110,80 +88,44 @@ public class MainActivity extends Activity  {
     sensorView3 = (TextView) findViewById(R.id.sensorView3);
     sensorView4 = (TextView) findViewById(R.id.sensorView4);
     sensorView5 = (TextView) findViewById(R.id.sensorView5);
+
     bluetoothIn = new Handler() {
         public void handleMessage(android.os.Message msg) {
             if (msg.what == handlerState) {										//if message is what we want
-            	String readMessage = (String) msg.obj;                                                                // msg.arg1 = bytes from connect thread
-                recDataString.append(readMessage);      								//keep appending to string until ~
-                int endOfLineIndex = recDataString.indexOf("~");                    // determine the end-of-line
-                if (endOfLineIndex > 0) {                                           // make sure there data before ~
-                    String dataInPrint = recDataString.substring(0, endOfLineIndex);    // extract string
-                //    txtString.setText("Data Received = " + dataInPrint);
-                    int dataLength = dataInPrint.length();							//get length of data received
-                 //   txtStringLength.setText("String Length = " + String.valueOf(dataLength));
-                    NumberFormat formatter ;
-                    formatter = new DecimalFormat(".00");
-                    NumberFormat formatter1 ;
-                    formatter1 = new DecimalFormat(".000000");
-                    NumberFormat formatter2;
-                    formatter2 = new DecimalFormat("0.00000000");
+                String readMessage = (String) msg.obj;                                                                // msg.arg1 = bytes from connect thread
+                String[] lines = readMessage.split(System.getProperty("\n"));
+                // All the attributes proclaims
+                String cardnumber = lines[0];
+                double current = Double.parseDouble(lines[1]);
+                double voltage = Double.parseDouble(lines[2]);
+                double power = Double.parseDouble(lines[3]);
+                double electricity = Double.parseDouble(lines[4]);
+                double balance = db.getBalance(cardnumber).getDouble(0);
+                double gained = 0.0;
+                // Update Database
+                db.updateInfo(cardnumber,Double.toString(electricity));
+                db.updateElectricity(cardnumber, (float) electricity);
 
+                sensorView0.setText(getResources().getString(R.string.cardnumber) +"\n"+ cardnumber );	//update the textviews with sensor values
+                sensorView1.setText(getResources().getString(R.string.current) + "\n"+current + "mA");
 
-                    if (recDataString.charAt(0) == '#')								//if it starts with # we know it is what we are looking for
-                    {
-                        String current = recDataString.substring(1,dataLength-9);             //get sensor value from string between indices 1-5
-                        String cardnumber = recDataString.substring(Math.max(1, dataInPrint.length() - 8)).replaceAll("[~]","");            //same again...
-                    Cursor mcursor = db.getCurrent(cardnumber);
-
-                    int numRows = mcursor.getCount();
-                    float i = 0;
-                    if (numRows > 0)
-                    {
-                        mcursor.moveToFirst();
-                        while (numRows>0) // or for loop
-                        {
-                            String strName = mcursor.getString(0);
-                            i = mcursor.getFloat(0);
-                            numRows--;
-                        }
-                    }
-                    float current2= Float.parseFloat(current)+i;
-/*                        stringBuf = new StringBuilder(_url);
-                        stringBuf.append("cardnumber="+cardnumber+"&cardbalance="+formatter1.format(current2/3600*0.00000714)+"&");
-                        get = new HttpGet(stringBuf.toString());
-                        try {
-                            response = client.execute(get);
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                        resEntity = response.getEntity();*/
-                    db.updateInfo(cardnumber,Float.toString(current2));
-                    	sensorView0.setText(getResources().getString(R.string.cardnumber) +"\n"+ cardnumber );	//update the textviews with sensor values
-                    	sensorView1.setText(getResources().getString(R.string.current) + "\n"+current + "mA");
-
-                        if(current2>0){
-                            sensorView2.setText(getResources().getString(R.string.electricity)+"\n" + formatter.format(current2/3600) +"mAh");
-                        }else{
-                            sensorView2.setText(getResources().getString(R.string.electricity)+"\n" +"0.00 mAh");
-                        }
-                        sensorView3.setText(getResources().getString(R.string.cardbalance)+"\n"+formatter1.format(current2/3600*0.00000714));
-                        sensorView4.setText(getResources().getString(R.string.gain)+"\n"+formatter2.format(Float.parseFloat(current)/3600*0.00000714));
-                    mcursor.close();
-                    }
-
-                    recDataString.delete(0, recDataString.length()); 					//clear all string data
-                   // strIncom =" ";
-                    dataInPrint = " ";
+                if(electricity>0){
+                    sensorView2.setText(getResources().getString(R.string.electricity)+"\n" + electricity +"mAh");
+                }else{
+                    sensorView2.setText(getResources().getString(R.string.electricity)+"\n" +"0.00 mAh");
                 }
+                sensorView3.setText(getResources().getString(R.string.cardbalance)+"\n"+balance);
+                sensorView4.setText(getResources().getString(R.string.gain)+"\n"+gained);
+                gained+= electricity*2.5;
+                balance += gained;
+                // update balance
+                db.updateBalance(cardnumber, (float) balance);
             }
         }
     };
 
     btAdapter = BluetoothAdapter.getDefaultAdapter();       // get Bluetooth adapter
     checkBTState();
-
-
-
   }
 
 
